@@ -1,0 +1,74 @@
+.container .cube-faces {
+    animation: none;
+    transform: none;
+}
+
+.container .cube-faces:first-of-type {
+    transform: rotate3d(1,1,0, -20deg);
+    animation: spin 20s infinite ease;
+}
+
+.face {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    border-radius: 0;
+}
+
+.inner-face {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.125);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 2px solid white;
+}
+
+.inner-face.front {
+    transform: translate3d(0, 0, 50px);
+}
+
+.inner-face.back {
+    transform: translate3d(0, 0, -50px);
+}
+
+.inner-face.left {
+    transform: rotate3d(0,1,0, -90deg) translate3d(0, 0, 50px);
+}
+
+.inner-face.right {
+    transform: rotate3d(0,1,0, 90deg) translate3d(0, 0, 50px);
+}
+
+.inner-face.bottom {
+    transform: rotate3d(1,0,0, 90deg) translate3d(0, 0, -50px)
+}
+
+.inner-face.top {
+    transform: rotate3d(1,0,0, 90deg) translate3d(0, 0, 50px)
+}
+
+.connection {
+    width: calc((sqrt(2)/2) * 100px);
+    height: 200px;
+    transform-origin: center;
+    position: absolute;
+}
+
+.connection.front-left {
+    transform: translate3d(-75px, 0px, 75px) rotate3d(0,1,0,45deg);
+}
+
+.connection.front-right {
+    transform: translate3d(75px, 0px, 75px) rotate3d(0,1,0,-45deg);
+}
+
+.connection.back-left {
+    transform: translate3d(-75px, 0px, -75px) rotate3d(0,1,0,-45deg);
+}
+
+.connection.back-right {
+    transform: translate3d(75px, 0px, -75px) rotate3d(0,1,0,45deg);
+}

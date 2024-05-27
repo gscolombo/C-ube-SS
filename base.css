@@ -1,0 +1,154 @@
+@keyframes spin {
+    0% {
+        transform: rotate3d(1,1,0, -45deg);
+    } 25% {
+        transform: rotate3d(1,1,0, 45deg);
+    } 50% {
+        transform: rotate3d(1,0,1, 75deg);
+    } 75% {
+        transform: rotate3d(-1,1,0, 125deg);
+    } 100% {
+        transform: rotate3d(1,1,0, -45deg);
+    }
+}
+
+* {
+    font-family: "Kode Mono", monospace;
+    color: white;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 0;
+    background-color: black;
+
+    scrollbar-width: thin;
+    scrollbar-color: white;
+}
+
+@supports selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-width: unset;
+        scrollbar-color: unset;
+    }
+
+    body::-webkit-scrollbar {
+        width: 5px;
+        background: black;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: white;
+    }
+}
+
+ul {
+    margin: 0;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+p {
+    font-size: clamp(1em, 2vw, 1.75em);
+}
+
+.wrapper {
+    padding: 20px;
+    min-height: 90vh;
+}
+
+nav {
+    max-width: 100vw;
+    border-bottom: 2px solid white;
+    background-color: black;
+}
+
+nav ul {
+    display: flex;
+    padding: 10px 16px;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 1.2em;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container .cube-faces {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotate3d(1,1,0, -80deg);
+    animation: spin 10s infinite ease;
+}
+
+.face {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.face.front {
+    transform: translate3d(0, 0, 100px);
+}
+
+.face.back {
+    transform: translate3d(0, 0, -100px);
+}
+
+.face.left {
+    transform: rotate3d(0,1,0, -90deg) translate3d(0, 0, 100px);
+}
+
+.face.right {
+    transform: rotate3d(0,1,0, 90deg) translate3d(0, 0, 100px);
+}
+
+.face.bottom {
+    transform: rotate3d(1,0,0, 90deg) translate3d(0, 0, -100px)
+}
+
+.face.top {
+    transform: rotate3d(1,0,0, 90deg) translate3d(0, 0, 100px)
+}
+
+footer {
+    border-top: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+footer span {
+    font-size: clamp(14px, 1vw, 2vw);
+}
+
+footer img {
+    display: block;
+    width: 25px;
+}
