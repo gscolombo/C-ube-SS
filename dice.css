@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 0 2.5px white;
+    border-radius: 2.5px;
 }
 
 .inner-face.front {
