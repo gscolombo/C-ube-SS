@@ -94,8 +94,6 @@ nav ul li a {
     align-items: center;
     transform-style: preserve-3d;
     transform-origin: center;
-    transform: rotate3d(1,1,0, -80deg);
-    animation: spin 10s infinite ease;
 }
 
 .face {
